@@ -127,7 +127,7 @@ PyGObject==3.48.2
 PyJWT==2.7.0
 pylint==3.3.7
 pymongo==4.12.1
-pyparsing==3.2.3cd
+pyparsingcd S-Code-Data
 python-dateutil==2.9.0.post0
 python-jsonrpc-server==0.4.0
 python-language-server==0.36.2
