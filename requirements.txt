@@ -23,7 +23,7 @@ Deprecated==1.2.18
 dill==0.4.0
 distlib==0.3.9
 distro==1.9.0
-Django==5.2.1
+Django==5.0
 dnspython==2.7.0
 docstring_parser==0.16
 executing==2.2.0
@@ -127,8 +127,7 @@ PyGObject==3.48.2
 PyJWT==2.7.0
 pylint==3.3.7
 pymongo==4.12.1
-pyparsing==3.2.3
-python-apt==2.7.7+ubuntu4
+pyparsing==3.2.3cd
 python-dateutil==2.9.0.post0
 python-jsonrpc-server==0.4.0
 python-language-server==0.36.2
