@@ -5,11 +5,14 @@ FROM python:3.11-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install system dependencies needed for building packages
+# Added libcairo2-dev and gir1.2-gobject-2.0 for pycairo and PyGObject
 RUN apt-get update && apt-get install -y \
     build-essential \
     pkg-config \
     libdbus-1-dev \
     libglib2.0-dev \
+    libcairo2-dev \
+    gir1.2-gobject-2.0 \
     # Clean up apt caches to keep the image size small
     && rm -rf /var/lib/apt/lists/*
 
