@@ -25,4 +25,3 @@ COPY . .
 
 # Define the command to run your application when the container starts.
 CMD ["python", "sec_form4_extractor.py"]
-cd 
