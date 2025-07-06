@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     pkg-config \
     libdbus-1-dev \
+    libglib2.0-dev \
     # Clean up apt caches to keep the image size small
     && rm -rf /var/lib/apt/lists/*
 
