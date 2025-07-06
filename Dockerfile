@@ -1,26 +1,25 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
+# Install system dependencies needed for building packages like dbus-python
+# 'build-essential' provides compilers (like gcc) and other development tools
+# 'pkg-config' is also often required for packages that use system libraries
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    pkg-config \
+    libdbus-1-dev \
+    # Clean up apt caches to keep the image size small
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements.txt file to the working directory
-# This step is done separately to leverage Docker's caching,
-# so dependencies are not reinstalled on every code change.
+# Copy the requirements.txt file and install dependencies
 COPY requirements.txt ./
-
-# Install any needed Python packages
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your application code to the working directory
+# Copy your entire Python application code into the container
 COPY . .
 
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# Define environment variables (optional, good practice for common ones)
-ENV NAME YourPythonApp
-
-# Run the application when the container launches
-# Replace 'app.py' with the actual name of your application's main entry file
-CMD ["python", "app.py"]
+# Define the command to run your application when the container starts.
+CMD ["python", "sec_form4_extractor.py"]
